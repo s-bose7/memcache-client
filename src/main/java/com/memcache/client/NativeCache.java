@@ -11,10 +11,9 @@ public interface NativeCache extends Library {
 	Pointer createCache(int capacity);
 	void deleteCache(Pointer cache);
 	
-	int get(Pointer cache, int key);
-	void put(Pointer cache, int key, int value);
-    boolean removeFromCache(Pointer cache, int key);
+	String get(Pointer cache, String key);
+	void put(Pointer cache, String key, String value);
+    boolean removeFromCache(Pointer cache, String key);
     boolean clear(Pointer cache);
-    boolean exists(Pointer cache, int key);
-	
+    boolean exists(Pointer cache, String key);	
 }
