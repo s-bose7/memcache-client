@@ -10,8 +10,6 @@ public class CacheManager {
 	private Status cacheStatus;
 	private CacheConfiguration config;
 	
-	// ======================= SINGLETON PATTERN ============================= 
-	
 	private CacheManager() {}
 	private CacheManager(CacheConfiguration config) {
 		this.config = config;
@@ -29,13 +27,11 @@ public class CacheManager {
 	}
 	
 	public static CacheManager getInstance(CacheConfiguration config) {
-		if(cacheManagerInstance == null) {
+		if(isNull()) {
 			cacheManagerInstance = new CacheManager(config);
 		}
 		return cacheManagerInstance;
 	}
-	
-	// =========================================================================
 	
 	public Status getStatus() {
 		return cacheStatus;
@@ -45,7 +41,7 @@ public class CacheManager {
 		this.cacheStatus = status;
 		return this;
 	}
-	// ======================== FACTORY PATTERN =================================
+
 	public Cache getCache() {
 		try {
 			this.cache = CacheFactory.createCache(config);
@@ -55,7 +51,7 @@ public class CacheManager {
 		
 		return this.cache;
 	}
-	// ===========================================================================
+
 	public void close() {
 		// Flush resources
 	}
