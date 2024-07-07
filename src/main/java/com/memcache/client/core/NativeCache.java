@@ -1,4 +1,4 @@
-package com.memcache.client;
+package com.memcache.client.core;
 
 import com.sun.jna.Library;
 import com.sun.jna.Native;

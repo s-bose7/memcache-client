@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import com.memcache.client.core.NativeCache;
 import com.memcache.client.config.CacheConfiguration;
 
 
