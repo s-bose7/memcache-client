@@ -19,7 +19,7 @@ public interface Cache {
      * @param key the key to check for
      * @return true if the cache contains an entry for the key, false otherwise
      */
-    public boolean containsKey(String key);
+    public boolean containsKey(int key);
 
     /**
      * Maps the specified key to the specified value in this cache.
@@ -27,23 +27,14 @@ public interface Cache {
      * @param key the key with which the specified value is to be associated
      * @param value the value to be associated with the specified key
      */
-    public void put(String key, Object value);
-
-    /**
-     * Maps the specified key to the specified value in this cache with a time-to-live (TTL).
-     * 
-     * @param key the key with which the specified value is to be associated
-     * @param value the value to be associated with the specified key
-     * @param ttl the time-to-live in seconds for the cache entry
-     */
-    public void put(String key, Object value, int ttl);
+    public void put(int key, int value);
 
     /**
      * Maps all the specified entries in this cache.
      * 
      * @param entries the entries to be associated with their respective keys
      */
-    public void putAll(Map<String, Object> entries);
+    public void putAll(Map<Integer, Integer> entries);
 
     /**
      * Maps the specified key to the specified value in this cache,
@@ -53,7 +44,7 @@ public interface Cache {
      * @param value the value to be associated with the specified key
      * @return the existing value associated with the key, or null if there was no mapping for the key
      */
-    public Object putIfAbsent(String key, Object value);
+    public int putIfAbsent(int key, int value);
 
     /**
      * Returns the value to which the specified key is mapped,
@@ -62,7 +53,7 @@ public interface Cache {
      * @param key the key whose associated value is to be returned
      * @return the value to which the specified key is mapped, or null if there is no mapping for the key
      */
-    public Object get(String key);
+    public int get(int key);
 
     /**
      * Returns a map of the values to which the specified keys are mapped.
@@ -70,7 +61,7 @@ public interface Cache {
      * @param keys the keys whose associated values are to be returned
      * @return a map of the values to which the specified keys are mapped
      */
-    public Map<String, Object> getAll(Set<String> keys);
+    public Map<Integer, Integer> getAll(Set<Integer> keys);
 
     /**
      * Removes the mapping for the specified key from this cache if present.
@@ -78,7 +69,7 @@ public interface Cache {
      * @param key the key whose mapping is to be removed from the cache
      * @return true if the mapping was removed, false otherwise
      */
-    public boolean remove(String key);
+    public boolean remove(int key);
 
     /**
      * Removes the entry for the specified key only if it is currently mapped to the specified value and is not expired.
@@ -87,14 +78,14 @@ public interface Cache {
      * @param value the value expected to be associated with the key
      * @return true if the value was removed, false otherwise
      */
-    public boolean remove(String key, Object value);
+    public boolean remove(int key, int value);
 
     /**
      * Removes the mappings for the specified keys from this cache.
      * 
      * @param keys the keys whose mappings are to be removed from the cache
      */
-    public void removeAll(Set<String> keys);
+    public void removeAll(Set<Integer> keys);
 
     /**
      * Replaces the entry for the specified key only if it is currently mapped to some value and the entry is not expired.
@@ -103,7 +94,7 @@ public interface Cache {
      * @param value the value to be associated with the specified key
      * @return the previous value associated with the key, or null if there was no mapping for the key
      */
-    public Object replace(String key, Object value);
+    public int replace(int key, int value);
 
     /**
      * Replaces the entry for the specified key only if it is currently mapped to the old value and the entry is not expired.
@@ -113,5 +104,5 @@ public interface Cache {
      * @param newValue the value to be associated with the specified key
      * @return true if the value was replaced, false otherwise
      */
-    public boolean replace(String key, Object oldValue, Object newValue);
+    public boolean replace(int key, int oldValue, int newValue);
 }

@@ -8,12 +8,12 @@ public interface NativeCache extends Library {
 	
 	NativeCache INSTANCE = (NativeCache) Native.load("MemCache", NativeCache.class);
 	
-	Pointer createCache(int capacity);
+	Pointer init(int capacity);
 	void deleteCache(Pointer cache);
 	
-	String get(Pointer cache, String key);
-	void put(Pointer cache, String key, String value);
-    boolean removeFromCache(Pointer cache, String key);
+	int get(Pointer cache, int key);
+	void put(Pointer cache, int key, int value, int ttl);
+    boolean removeFromCache(Pointer cache, int key);
     boolean clear(Pointer cache);
-    boolean exists(Pointer cache, String key);	
+    boolean exists(Pointer cache, int key);	
 }
