@@ -6,10 +6,11 @@ import com.memcache.client.MemCache;
 
 import com.memcache.client.config.CacheConfiguration;
 import com.memcache.client.config.DefaultConfigurationBuilder;
+import com.memcache.client.exception.CacheInitializationException;
 
 public class CacheFactory {
 	
-	public static Cache createCache(CacheConfiguration config) {
+	public static Cache createCache(CacheConfiguration config) throws CacheInitializationException {
 		if(config == null) {
 			config = DefaultConfigurationBuilder.getDefaultConfiguration();
 		}
