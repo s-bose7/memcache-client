@@ -1,6 +1,6 @@
-package com.memcache.client;
+package com.memcache.client.core;
 
-import com.memcache.client.core.NativeCache;
+import com.memcache.client.Cache;
 import com.memcache.client.config.CacheConfiguration;
 
 import com.memcache.client.exception.CacheBulkReadingException;
