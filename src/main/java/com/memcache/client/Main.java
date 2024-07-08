@@ -9,14 +9,14 @@ public class Main {
 		
 	public static void main(String[] args) {
 		CacheConfiguration config = new ConfigurationBuilder()
-													.setCacheName("db-cache-id-5432")
-													.setInitialSize(100)
-													.setExpirationTime(60)
-													.setLoggingEnabled(false)
-													.setCompressionEnabled(false)
-													.build();		
-		CacheManager cacheManager = CacheManager.getInstance(config);
-		Cache memCache = cacheManager.getCache();
+				.setInitialSize(100)									
+				.setCacheName("db-cache-id-5432")									
+				.setExpirationTime(60)
+				.setLoggingEnabled(false)
+				.setCompressionEnabled(false)
+				.build();
+		
+		Cache memCache = CacheManager.createCache(config);
 		
 		memCache.put(500, 2);
 		System.out.println(memCache.get(500));         // 2
