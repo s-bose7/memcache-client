@@ -6,3 +6,6 @@ target/
 bin/
 
 .idea/
+
+# PGP signature files
+pom.xml.asc
