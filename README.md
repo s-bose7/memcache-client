@@ -1,8 +1,36 @@
 # memcache-client
 
+![maven-build](https://github.com/s-bose7/memcache-client/actions/workflows/build.yml/badge.svg)
+![License](https://img.shields.io/github/license/s-bose7/memcache-client?color=blue)
+![lifecycle](https://img.shields.io/badge/lifecycle-beta-blue)
+![Maven Central Version](https://img.shields.io/maven-central/v/io.github.s-bose7/memcache-client)
 
 
-# Example:
+The library provides a Java Native Interface (JNI) wrapper for the [memcache](https://github.com/s-bose7/memcache.git) library, allowing seamless integration of memcache's in-memory caching capabilities into Java applications. It simplifies the process of interacting with memcache's caching functionalities from Java code, leveraging the power and efficiency of memcache within a Java environment.
+
+Additionally, the library inherently supports bulk read/write operations to the cache, iteration capabilities, cache configuration management, and more.
+
+# Setup
+
+You can find this library in [Maven central repository](https://repo1.maven.org/maven2/io/github/s-bose7/). 
+
+Include the latest version of memcache-client into your project:
+
+In Maven:
+
+```bash
+<dependency>
+  <groupId>io.github.s-bose7</groupId>
+  <artifactId>memcache-client</artifactId>
+  <version>version</version>
+</dependency>
+```
+
+
+# Example Usage:
+
+Cache initialization follows the builder and abstract factory patterns. Clients have the option to initialize the cache with no configuration, in which case the factory will provide a default cache configuration.
+
 ```java
 public class Main {
 	public static void main(String[] args) {
@@ -23,9 +51,3 @@ public class Main {
 }
 ```
 
-# todo:
-- Add logging
-- Add statistics
-- Improving the native interface to suppport more types
-- Can the cache be iterable?
-- Add native binaries of cross-platforms (Win, Mac) 
