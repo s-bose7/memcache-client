@@ -12,7 +12,7 @@ Additionally, the library inherently supports bulk read/write operations to the 
 
 # Setup
 
-You can find this library in [Maven central repository](https://repo1.maven.org/maven2/io/github/s-bose7/). 
+You can find this library in [Maven central repository](https://mvnrepository.com/artifact/io.github.s-bose7/memcache-client). 
 
 Include the latest version of memcache-client into your project:
 
