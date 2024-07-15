@@ -32,21 +32,32 @@ In Maven:
 Cache initialization follows the builder and simple factory patterns. Clients have the option to initialize the cache with no configuration, in which case the factory will provide a default cache configuration.
 
 ```java
+import io.github.sbose7.Cache;
+import io.github.sbose7.config.CacheConfiguration;
+import io.github.sbose7.config.ConfigurationBuilder;
+import io.github.sbose7.manager.CacheManager;
+import io.github.sbose7.exception.CacheInitializationException;
+
 public class Main {
 	public static void main(String[] args) {
 		CacheConfiguration config = new ConfigurationBuilder()
-				.setInitialSize(100)									
-				.setCacheName("db-cache-id-5432")									
+				.setInitialSize(100)
+				.setCacheName("db-cache-id-5432")
 				.setExpirationTime(60)
 				.setLoggingEnabled(false)
 				.setCompressionEnabled(false)
 				.build();
 		
-		Cache memCache = CacheManager.createCache(config);
+		try {
+			Cache memCache = CacheManager.createCache(config);
+		} catch (CacheInitializationException e){
+			e.printStackTrace();
+		}
+		
 		memCache.put(13, 26);
-		System.out.println(memCache.get(13));          // 26
-		System.out.println(memCache.remove(13));       // true
-		System.out.println(memCache.containsKey(13));  // false
+		System.out.println(memCache.get(13));         // 26
+		System.out.println(memCache.remove(13));      // true
+		System.out.println(memCache.containsKey(13)); // false
 	}
 }
 ```
