@@ -32,6 +32,8 @@ In Maven:
 Cache initialization follows the builder and simple factory patterns. Clients have the option to initialize the cache with no configuration, in which case the factory will provide a default cache configuration.
 
 ```java
+package com.memcahe.demo;
+
 import io.github.sbose7.Cache;
 import io.github.sbose7.config.CacheConfiguration;
 import io.github.sbose7.config.ConfigurationBuilder;
